@@ -1,12 +1,12 @@
 # yosmel-skills
 
-Norske ferdigheter (`SKILL.md`) og kjøreregler for AI-assistert programvareutvikling. Laget for å løse tre konkrete utfordringer når språkmodeller skriver norsk tekst, bygger grensesnitt og endrer kode:
+Practical `SKILL.md` files and `AGENTS.md` rules for AI-assisted software development. Built from real-world frontend, backend, and design system work to keep generated code, interfaces, and copy grounded:
 
-1. **[`norsk-tone`](./skills/norsk-tone/SKILL.md):** Får språkmodeller til å skrive naturlig, muntlig norsk bokmål uten stive direkteoversettelser fra engelsk, oppkonstruerte sammensatte ord, tankestreker eller klisjeer.
-2. **[`rolig-design`](./skills/rolig-design/SKILL.md):** Fjerner typiske AI-trekk fra webgrensesnitt (flerfargede bakgrunnsgløder, kald blågrå mørkmodus, fete overskrifter overalt og hoppende kort) til fordel for matte flater, varme kulltoner og redaksjonell typografi.
-3. **[`slank-kode`](./skills/slank-kode/SKILL.md):** Holder kodebasen og konteksten slank gjennom planlegging før kode, en enkelt sannhetskilde for data, aktiv sletting av unødvendige lag og tester som sjekker reell oppførsel.
+1. **[`ui-craft`](./skills/ui-craft/SKILL.md):** Design system and frontend rules based on the 3P framework (*Purpose, Principles, Personality*), the 60-30-10 color rule, fluid `clamp()` typography, restrained border radii (`6px` to `14px`), matte surfaces without multi-color aurora glows, and viewport-aware media performance.
+2. **[`natural-copy`](./skills/natural-copy/SKILL.md):** Rules for direct, human-sounding UI copy, documentation, and voice/chat scripts in both English and Norwegian (`nb`), stripping LLM filler, em dashes, and stiff literal translations of technical terms.
+3. **[`lean-architecture`](./skills/lean-architecture/SKILL.md):** Workflow and code rules for planning constraints before code, building in *Spike and Stabilize* cycles, keeping a single source of truth for data, preferring deletion over addition, and documenting silent production gotchas.
 
-## Struktur
+## Repository Structure
 
 ```text
 yosmel-skills/
@@ -14,60 +14,58 @@ yosmel-skills/
 ├── LICENSE
 ├── README.md
 └── skills/
-    ├── norsk-tone/
+    ├── lean-architecture/
     │   └── SKILL.md
-    ├── rolig-design/
+    ├── natural-copy/
     │   └── SKILL.md
-    └── slank-kode/
+    └── ui-craft/
         └── SKILL.md
 ```
 
-## Bruk i prosjekter
+## Usage
 
-Du kan enten legge mappen `skills/` inn i `.agents/skills/` (støttes av verktøy som følger Agent Skills-standarden, som Claude Code, Cursor, Antigravity og Gemini CLI), eller kopiere [`AGENTS.md`](./AGENTS.md) rett inn i roten av prosjektet ditt.
+Copy the `skills/` folders into `.agents/skills/` (compatible with tools supporting the Agent Skills standard such as Claude Code, Cursor, Antigravity, and Gemini CLI), or drop [`AGENTS.md`](./AGENTS.md) directly into the root of your repository.
 
-## Videreutvikling og nye ferdigheter
+## Extending and Contributing
 
-Dette repoet er bygget for å vokse i takt med nye erfaringer i prosjekter. Både jeg og andre utviklere kan utvide eksisterende ferdigheter eller legge til nye.
+This repository is meant to evolve as new patterns and failure modes show up in real projects.
 
-### 1. Utvide en eksisterende ferdighet
+### 1. Updating an Existing Skill
 
-Når en språkmodell gjentar en ny uvane i et prosjekt, legg til et konkret punkt i den ferdigheten det gjelder:
+When an LLM repeats a mistake in a project, add a concrete rule to the relevant skill:
 
-- **Nytt kunstig norsk ord eller stiv oversettelse:** Legg ordet og det naturlige alternativet inn i tabellen i [`skills/norsk-tone/SKILL.md`](./skills/norsk-tone/SKILL.md).
-- **Nytt visuelt mal-trekk i CSS eller UI:** Beskriv mønsteret som skal unngås og hvilken konkret verdi som skal brukes i stedet i [`skills/rolig-design/SKILL.md`](./skills/rolig-design/SKILL.md).
-- **Ny kodeuvane eller arkitekturregel:** Legg inn regelen med et kort praktisk eksempel i [`skills/slank-kode/SKILL.md`](./skills/slank-kode/SKILL.md).
+- **UI or CSS defaults:** Add the anti-pattern and its exact token replacement to [`skills/ui-craft/SKILL.md`](./skills/ui-craft/SKILL.md).
+- **Copy or translation habits:** Add the phrase or literal translation to the replacement table in [`skills/natural-copy/SKILL.md`](./skills/natural-copy/SKILL.md).
+- **Architecture, testing, or deployment gotchas:** Add the rule and a brief example to [`skills/lean-architecture/SKILL.md`](./skills/lean-architecture/SKILL.md).
 
-### 2. Legge til en ny ferdighet fra bunnen av
+### 2. Adding a New Skill
 
-Hver ferdighet bor i sin egen mappe under `skills/<navn>/SKILL.md` og følger dette oppsettet:
+Create a new folder under `skills/<skill-name>/SKILL.md` with YAML frontmatter:
 
 ```markdown
 ---
-name: <kort-navn-med-bindestrek>
-description: "Kort beskrivelse av hva ferdigheten gjør og når modellen skal bruke den."
+name: <skill-name>
+description: "Short description of what the skill enforces and when the agent should load it."
 ---
 
-# <kort-navn-med-bindestrek>
+# <skill-name>
 
-Kort forklaring (2 til 3 setninger) på hvilket konkret problem ferdigheten løser.
+2 to 3 sentences explaining the exact problem this skill solves.
 
-## 1. <Første hovedregel>
+## 1. <First Core Rule>
 
-- Konkret instruks med eksempel på hva som skal unngås og hva som skal gjøres i stedet.
+- Concrete instruction showing what to avoid and what to do instead.
 ```
 
-### 3. Prinsipper for bidrag
+### 3. Guidelines for Skills
 
-For at ferdighetene skal være raske for en språkmodell å lese uten å spise opp kontekstvinduet:
+To keep context usage low and signal high:
 
-1. **Kun regler som endrer atferd:** Ikke legg inn generelle lærebokråd som modellen allerede kan fra før. Hver regel skal rette opp en konkret feil modellen faktisk gjør uten styring.
-2. **Konkrete eksempler fremfor vage adjektiver:** Vis heller *"Unngå X, skriv Y"* eller eksakte verdier (`font-weight: 400`, `#141211`) enn å be modellen om å *"skrive godt"* eller *"lage et fint design"*.
-3. **Hold filene korte:** En `SKILL.md` bør være under 100 linjer. Hvis en ferdighet trenger lengre oppslagsverk eller hjelpescript, legg dem i undermapper (`references/` eller `scripts/`) inne i ferdighetens mappe.
-4. **Følg reglene selv:** Alle tekster i dette repoet skal følge [`norsk-tone`](./skills/norsk-tone/SKILL.md) (naturlig norsk bokmål og null tankestrek).
+1. **Only rules that change model behavior:** Skip generic textbook advice the model already follows by default. Every rule should counter a specific default habit.
+2. **Concrete tokens over vague adjectives:** Specify exact ratios, CSS `clamp()` formulas, hex/OKLCH values, or before/after phrasing rather than asking for "clean design" or "good writing".
+3. **Keep skill files under 100 lines:** If a skill needs longer reference tables or helper scripts, place them in `references/` or `scripts/` inside that skill's folder.
+4. **Update the index:** When adding a new skill, list it in [`AGENTS.md`](./AGENTS.md) and at the top of this README.
 
-Når en ny ferdighet er lagt til under `skills/`, legg også inn en kort linje om den i [`AGENTS.md`](./AGENTS.md) og i oversikten øverst i denne filen.
-
-## Lisens
+## License
 
 MIT © Yosmel Chiang
