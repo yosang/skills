@@ -1,4 +1,4 @@
-# yosmel-skills
+# skills
 
 Practical `SKILL.md` files and `AGENTS.md` rules for AI-assisted software development. Built from real-world frontend, backend, and design system work to keep generated code, interfaces, and copy grounded:
 
@@ -9,7 +9,7 @@ Practical `SKILL.md` files and `AGENTS.md` rules for AI-assisted software develo
 ## Repository Structure
 
 ```text
-yosmel-skills/
+skills/
 ├── AGENTS.md
 ├── LICENSE
 ├── README.md
