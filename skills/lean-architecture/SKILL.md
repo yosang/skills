@@ -19,10 +19,12 @@ When the same domain item (projects, routes, plans, or marketing paths) is dupli
 - Define shared records in a single typed module (for example `src/data/projects.ts` or `lib/constants/marketing-routes.ts`) and derive UI lists, category filters, search keywords, SEO/JSON-LD metadata, and AI context from that single export.
 - Extract reusable UI components (`ProjectCard`, `ButtonLink`) when markup is genuinely shared, but follow the rule of three before introducing abstract factories or wrapper layers.
 
-## 3. Prefer Deletion Over Addition
+## 3. Prefer Deletion Over Addition & Small, Safe Commits
 
-Every line of code is a maintenance and context cost.
+Every line of code is a maintenance and context cost. Write code that serves your team and your future self:
 
+- **Small, frequent commits:** Commit working increments frequently so you can roll back fearlessly (especially during AI-assisted sessions) and keep Git history easy for teammates to follow. Never mix structural refactoring and behavior changes in the same commit.
+- **Spot structural code smells early:** Watch for duplicated data definitions that require editing multiple files for a single change, functions that outgrow their single responsibility, and speculative abstractions.
 - **Delete dead code immediately:** Remove commented-out blocks, unused imports, stale helpers, and unused props. Git preserves history.
 - **Comment *why*, never *what*:** Delete comments that restate the code or echo prompt steps (`// Step 1: fetch user`). Write comments only for non-obvious constraints, browser quirks, or architectural tradeoffs.
 - **No silent error swallowing:** Do not wrap typed code in defensive `try/catch` blocks that swallow errors and return `null`. Let errors surface at the boundary where recovery happens.
