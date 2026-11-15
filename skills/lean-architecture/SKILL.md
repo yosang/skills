@@ -10,7 +10,7 @@ Unconstrained AI code generation tends to produce 2x the necessary lines of code
 ## 1. Constraints Before Code & Spike and Stabilize
 
 1. **Paper and `AGENTS.md` First:** Before prompting or writing code, map out the data model and hard platform constraints in `AGENTS.md` (for example, legacy smart-TV browsers freezing `<video>` on frame 0 and requiring animated WebP + ES5, or keeping a service within 5 npm packages on built-in `node:sqlite`).
-2. **Spike and Stabilize:** Build a narrow, end-to-end vertical slice from database to UI first (*Spike*) to verify the idea works in practice. Then switch to *Stabilize*: strip temporary scaffolding, handle real edge cases, and lock behavior with tests while keeping file context under 100 to 200 lines at a time.
+2. **Spike and Stabilize ([Dan North](https://dannorth.net/blog/on-craftsmanship/)):** Build a narrow, end-to-end vertical slice from database to UI first (*Spike*) to verify the idea works in practice. Then switch to *Stabilize*: strip temporary scaffolding, handle real edge cases, and lock behavior with tests while keeping file context under 100 to 200 lines at a time.
 
 ## 2. Single Source of Truth for Shared Data
 

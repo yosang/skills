@@ -5,7 +5,11 @@ description: "Apply grounded UI, typography, color, spacing, and media performan
 
 # ui-craft
 
-Left unconstrained, code models converge on the same visual defaults: multi-color `radial-gradient` background blobs, pitch-black dark mode, oversized `24px+` rounded cards that bounce and zoom on hover, and bold headings everywhere. This skill replaces those defaults with a disciplined design system grounded in the 3P framework (*Purpose, Principles, Personality*).
+Left unconstrained, code models converge on the same visual defaults: multi-color `radial-gradient` background blobs, pitch-black dark mode, oversized `24px+` rounded cards that bounce and zoom on hover, and bold headings everywhere. This skill replaces those defaults with a disciplined design system grounded in **Matt D. Smith's (MDS / [Shift Nudge](https://shiftnudge.com)) 3P framework (*Purpose, Principles, Personality*)**:
+
+1. **Purpose (*What is this for?*):** Every screen and element must solve a concrete user task and earn its place before high-fidelity styling begins.
+2. **Principles (*How is it structured?*):** Non-negotiable standards for color harmony, fluid typography, spacing, contrast (WCAG 2.1 AA), and responsiveness.
+3. **Personality (*What does it feel like?*):** Brand voice, surface materiality, corner radii, and motion layered on top of a functional foundation (Aarron Walter's hierarchy of user needs in *Designing for Emotion*: *Functional → Reliable → Usable → Delightful*).
 
 ## 1. The 60-30-10 Color Rule & Cohesive Neutrals
 
@@ -20,7 +24,7 @@ Every interface follows a strict color budget:
 ## 2. Fluid Typography, Hierarchy & Measure
 
 - **Maximum 2 Font Families:** Pair one display/heading typeface with one high-legibility body typeface (plus a monospace face for code/metadata).
-- **Fluid Type Scale (`clamp`):** Scale smoothly from a `1.2` modular ratio on mobile to desktop without abrupt breakpoint jumps:
+- **Fluid Type Scale (`clamp`, via [Utopia.fyi](https://utopia.fyi)):** Scale smoothly from a `1.2` modular ratio on mobile to desktop without abrupt breakpoint jumps:
   - Display: `clamp(2.25rem, 4vw + 1.25rem, 4rem)`
   - H1: `clamp(1.875rem, 3vw + 1rem, 3rem)`
   - H2: `clamp(1.5rem, 1.5vw + 1.1rem, 2.25rem)`
