@@ -33,11 +33,13 @@ When writing Norwegian UI copy, documentation, or spoken TTS persona notes, writ
 | *ryggmargsrettferdig* | *rettferdig*, *uten juks* |
 | *kjernen i oppsettet* | *tanken bak*, *slik det fungerer* |
 
-### Retain standard English engineering terms used in Norway
+### Retain standard English engineering terms and drop hyphen clutter
 
 - Keep established terms untouched: `frontend`, `backend`, `fullstack`, `remote`, `hybrid`, `state`, `loading og error states`, `soft delete`, `edge cases`, `middleware`, `cookie`, `refresh token`, `deploy`, `repo`, `stack`, `UI`, `assets`, `accessibility`, `REST API`.
-- Avoid unnecessary hyphens in Norwegian compounds: write `frontendutvikling`, `backendutvikling`, `fullstackutvikler`, `programvareutvikling`, `QR kode`, `3D figur`, `AI versjon`.
-- Use `programvareutvikling` or `utvikling` (never `koding`), and write `ide` and `en` without acute accents (`é`).
+- **No suspended hyphens:** Never write list compounds like *turnerings-, bord- og aktivitetsplattform*, *loading- og error-states*, or *minutt- og dagskvoter*. Rephrase into normal spoken words (*et system for turneringer og poengtavle*, *loading og error states*, *kvoter per minutt og per dag*).
+- **No hyphens between tech terms/abbreviations and Norwegian words:** Write single words or space-separated phrases (`frontendutvikling`, `backendutvikling`, `fullstackutvikler`, `programvareutvikling`, `QR kode`, `3D modell`, `3D skannet`, `AI versjon`, `AI assistert`, `WAL modus`, `ES5 støtte`, `Docker container`, `SQLite database`, `backend løsninger`).
+- **Never glue Norwegian suffixes onto code identifiers with a hyphen:** Avoid `.Include()-kall`, `node:sqlite-modulen`, `<video>-tag`, or `SKILL.md-moduler`. Write *kall til `.Include()`*, *innebygd `node:sqlite`*, *`<video>`*, and *`SKILL.md` filer*.
+- Use `programvareutvikling` or `utvikling` (never `koding`), prefer plain `regler` or `rammer` over stiff `kjøreregler`, and write `ide` and `en` without acute accents (`é`).
 - **Source notes for TTS/chat models:** Write background notes in the exact everyday phrasing you want spoken aloud. If prompt notes contain dense English or stiff nouns, fast models will invent awkward translations mid-sentence.
 
 ## 3. Personal, Portfolio & Application Copy
