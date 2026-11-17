@@ -14,6 +14,7 @@ Language models default to predictable punctuation, throat-clearing transitions,
 - **Cut openers and summaries:** Skip conversational filler (*"Great question!"*, *"Let's dive in"*) and dutiful closing summaries. Stop as soon as the last concrete point lands.
 - **Drop empty buzzwords:** Avoid *seamless*, *robust*, *cutting-edge*, *tailored*, *holistic*, *empower*, *delve*, *tapestry*, and their Norwegian equivalents (*sømløs*, *robust*, *banebrytende*, *skreddersydd*, *helhetlig*, *spennende reise*).
 - **Straight quotes:** Use standard straight quotes (`"` and `'`).
+- **No dangling plural apostrophes:** Avoid trailing apostrophes after plural words (`students'`, `users'`, `players'`) that look like stray marks in UI copy. Rephrase naturally (*"among students"*, *"for users"*, *"player points"*).
 
 ## 2. Natural Norwegian (`nb`) for Developers & Voice/TTS
 
