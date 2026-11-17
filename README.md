@@ -1,9 +1,9 @@
 # skills
 
-Practical `SKILL.md` files and `AGENTS.md` rules for AI-assisted software development. Built from real-world frontend, backend, and design system work to keep generated code, interfaces, and copy grounded:
+Practical `SKILL.md` files and `AGENTS.md` rules for AI assisted software development. Built from real world frontend, backend, and design system work to keep generated code, interfaces, and copy grounded.
 
 1. **[`ui-craft`](./skills/ui-craft/SKILL.md):** Design system and frontend rules grounded in Matt D. Smith's (MDS / [Shift Nudge](https://shiftnudge.com)) 3P framework (*Purpose, Principles, Personality*), the 60-30-10 color rule, fluid `clamp()` typography ([Utopia.fyi](https://utopia.fyi)), restrained border radii (`6px` to `14px`), matte surfaces without multi-color aurora glows, and viewport-aware media performance.
-2. **[`natural-copy`](./skills/natural-copy/SKILL.md):** Rules for direct, human-sounding UI copy, documentation, and voice/chat scripts in both English and Norwegian (`nb`), stripping LLM filler, em dashes, and stiff literal translations of technical terms.
+2. **[`natural-copy`](./skills/natural-copy/SKILL.md):** Rules for direct, human UI copy, documentation, and voice/chat scripts in both English and Norwegian (`nb`), stripping LLM filler, em dashes, mid-sentence colons, and stiff literal translations of technical terms.
 3. **[`lean-architecture`](./skills/lean-architecture/SKILL.md):** Workflow and code rules for planning constraints before code, building in Dan North's [*Spike and Stabilize*](https://dannorth.net/blog/on-craftsmanship/) cycles, keeping a single source of truth for data, preferring deletion over addition, and documenting silent production gotchas.
 
 ## Repository Structure

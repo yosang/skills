@@ -9,10 +9,12 @@ Language models default to predictable punctuation, throat-clearing transitions,
 
 ## 1. Universal Prose Rules (English & Norwegian)
 
-- **Zero em dashes:** Never use em dashes (`—`), en dashes as sentence separators (`–`), or double hyphens (`--`). Use commas, periods, colons, or parentheses instead.
+- **Zero em dashes and no colons in sentences or headings:** Never use em dashes (`—`), en dashes as sentence separators (`–`), double hyphens (`--`), or colons (`:`) in the middle of a running sentence to join clauses (avoid *"Den erfaringen gjør at jeg trives når jeg får bidra med mer enn bare kode: engasjere meg i møte med kunden..."*). Never use colon-split headings (`Label: Subtitle` such as *"Utenfor skjermen: Fjell, telt og hunden"*, *"Målgruppe og innsikt: Hvem vi bygger for"*, or *"Uke 1: Normalisering"*); drop the prefix and write the direct heading (*"Fjell, telt og hunden"*). In running sentences, use commas, natural connecting words (*som å*, *både*, *fra ... til*, *der*, *men*, *such as*, *from ... to*), parentheses, or split into two sentences with a period.
+- **Drop compound modifier hyphens:** Avoid hyphenating compound modifiers or tech terms in English and Norwegian (`full-stack`, `cross-clinic`, `real-time`, `AI-assisted`, `role-based`, `in-memory`, `server-side`, `speech-to-text`, `built-in`, `stress-tested`, `two-year`). Write single words or space-separated words instead (`fullstack`, `across clinics`, `real time`, `AI assisted`, `role based`, `in memory`, `server side`, `speech to text`, `built in`, `stress tested`, `two year`).
 - **State what something is:** Avoid negative parallelisms such as *"It's not about X, it's about Y"* or *"less about X and more about Y"*. Say directly what the product or code does.
 - **Cut openers and summaries:** Skip conversational filler (*"Great question!"*, *"Let's dive in"*) and dutiful closing summaries. Stop as soon as the last concrete point lands.
-- **Drop empty buzzwords:** Avoid *seamless*, *robust*, *cutting-edge*, *tailored*, *holistic*, *empower*, *delve*, *tapestry*, and their Norwegian equivalents (*sømløs*, *robust*, *banebrytende*, *skreddersydd*, *helhetlig*, *spennende reise*).
+- **Drop empty buzzwords & stiff essay verbs:** Avoid *seamless*, *robust*, *cutting-edge*, *tailored*, *holistic*, *empower*, *delve*, *tapestry*, *showcase*, *demonstrate*, *accumulate*, *arose*, *endeavor*, *facilitate*, *utilize*, *consolidate*, *eliminate*, *cumbersome*, *purged*, *subsequently*, *following a bout of*, *targeted by trickery*, and their Norwegian equivalents (*sømløs*, *robust*, *banebrytende*, *skreddersydd*, *helhetlig*, *spennende reise*, *faktaforankring*, *strengt forankret*, *målrettede tiltak*). Use everyday spoken verbs (*show*, *walk through*, *save/collect*, *came up*, *use*, *gather*, *clean up*, *heavy*, *cleared*, *after*).
+- **Translate idioms by meaning, never word for word:** When translating between Norwegian and English, never calque idioms literally (translate *"står og faller på"* as *"depends on"*, never *"stands and falls on"*; translate *"muntlig trening"* as *"speaking practice"*, never *"oral practice"*; keep *"AI version of me"*, never *"AI twin"*).
 - **Straight quotes:** Use standard straight quotes (`"` and `'`).
 - **No dangling plural apostrophes:** Avoid trailing apostrophes after plural words (`students'`, `users'`, `players'`) that look like stray marks in UI copy. Rephrase naturally (*"among students"*, *"for users"*, *"player points"*).
 
@@ -20,16 +22,25 @@ Language models default to predictable punctuation, throat-clearing transitions,
 
 When writing Norwegian UI copy, documentation, or spoken TTS persona notes, write the way a Norwegian developer actually talks over coffee:
 
-### Never invent literal translations of English tech terms
+### Never invent literal translations or bureaucratic terms
 
-| Avoid (stiff or invented literal translation) | Use instead (natural Norwegian or standard term) |
+| Avoid (stiff, textbook, or bureaucratic) | Use instead (natural Norwegian or standard term) |
 | :--- | :--- |
 | *enkeltkilde-sannhet* | *en felles kilde*, *samlet på ett sted* |
 | *myk sletting* | *soft delete* |
 | *kanttilfeller* | *edge cases*, *uvanlige tilfeller* |
 | *tilstandshåndtering* | *state* |
-| *skjermflate* | *side*, *visning*, *UI* |
+| *tilgjengelighet* | *accessibility* |
+| *unike skranker* | *unike indekser*, *unique constraints* |
+| *arbeidsminnet* | *minnet* |
+| *informasjonskapsler* / *sporingscookies* | *cookies*, *cookies for sporing* |
+| *stemmesyntese* / *syntetisk stemme* | *klonet stemme*, *stemme* |
+| *skjermflate* / *applikasjonen* / *publikumssidene* | *side*, *visning*, *UI*, *løsningen*, *nettsiden*, *de åpne sidene* |
 | *fjernarbeid* | *remote* |
+| *faktaforankring* / *strengt forankret* | *holder seg til godkjente fakta*, *kun godkjente fakta* |
+| *merkantil* / *merkantile* | *forretning*, *forretningsvirksomhet* |
+| *målrettede tiltak* | *konkrete grep*, *endringer* |
+| *medbygger* | *medgründer*, *driver sammen med* |
 | *tosidig bekreftelse* | *begge bekrefter resultatet* |
 | *ryggmargsrettferdig* | *rettferdig*, *uten juks* |
 | *kjernen i oppsettet* | *tanken bak*, *slik det fungerer* |
