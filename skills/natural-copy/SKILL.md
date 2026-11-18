@@ -44,6 +44,7 @@ When writing Norwegian UI copy, documentation, or spoken TTS persona notes, writ
 | *tosidig bekreftelse* | *begge bekrefter resultatet* |
 | *ryggmargsrettferdig* | *rettferdig*, *uten juks* |
 | *kjernen i oppsettet* | *tanken bak*, *slik det fungerer* |
+| *belegg* / *belagt* | *i bruk*, *opptatt* |
 | *AI* (i norsk tekst) | *KI* (*KI versjonen*, *KI assistert*, *praktisk KI*) |
 
 ### Use `KI` in Norwegian (`nb`) and `AI` in English (`en`), retain standard developer terms, and drop hyphen clutter
