@@ -40,6 +40,7 @@ Every interface follows a strict color budget:
 - **Tactile Radii (`6px` to `14px`):** Use `6px` for small badges/buttons, `8px` to `12px` for inputs and inner cards, and `12px` to `14px` for showcase containers. Avoid bloated `24px+` bubble cards.
 - **Subtle Depth & Calm Hover:** Use a crisp `1px` low-opacity border and restrained shadow (`0 8px 24px -12px rgba(0, 0, 0, 0.12)`). Keep imagery still on hover (no `hover:scale-105` or card bounce); signal hover with a subtle border transition.
 - **Clear Input Affordance:** Keep free-text inputs visually distinct from suggestion chips with a static, open placeholder.
+- **Clean Headings with `?` Tooltips:** Keep card titles, section headings, and setting labels short and free of explanatory parentheticals (write `Fylkesliga` instead of `Fylkesliga - Skole mot Skole (Anonymisert samspill-liga)`). Move optional clarifications into a small, muted `?` info button with a compact tooltip that works on hover, keyboard focus, and tap (stop event propagation inside collapsible headers).
 
 ## 4. Viewport-Aware Media & Asset Performance
 
