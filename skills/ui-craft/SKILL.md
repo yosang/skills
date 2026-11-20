@@ -5,42 +5,40 @@ description: "Apply grounded UI, typography, color, spacing, and media performan
 
 # ui-craft
 
-Left unconstrained, code models converge on the same visual defaults: multi-color `radial-gradient` background blobs, pitch-black dark mode, oversized `24px+` rounded cards that bounce and zoom on hover, and bold headings everywhere. This skill replaces those defaults with a disciplined design system grounded in **Matt D. Smith's (MDS / [Shift Nudge](https://shiftnudge.com)) 3P framework (*Purpose, Principles, Personality*)**:
+Left unconstrained, code models converge on the same visual defaults: multi-color `radial-gradient` background blobs, pitch-black dark mode, oversized `24px+` rounded cards that bounce on hover, floating glassmorphism pills, and bold headings everywhere. This skill replaces those defaults with a disciplined design system grounded in **Matt D. Smith's (MDS / [Shift Nudge](https://shiftnudge.com)) 3P framework (*Purpose, Principles, Personality*)**:
 
 1. **Purpose (*What is this for?*):** Every screen and element must solve a concrete user task and earn its place before high-fidelity styling begins.
 2. **Principles (*How is it structured?*):** Non-negotiable standards for color harmony, fluid typography, spacing, contrast (WCAG 2.1 AA), and responsiveness.
 3. **Personality (*What does it feel like?*):** Brand voice, surface materiality, corner radii, and motion layered on top of a functional foundation (Aarron Walter's hierarchy of user needs in *Designing for Emotion*: *Functional → Reliable → Usable → Delightful*).
 
-## 1. The 60-30-10 Color Rule & Cohesive Neutrals
+## 1. Gallery Principle, Color Budget & Curated Light Rhythm
 
-Every interface follows a strict color budget:
+Every interface follows a strict color budget so the product or content carries the color rather than the surrounding chrome:
 
-- **60% Canvas & Primary Surfaces:** Matte neutral backgrounds. Never layer multi-color `radial-gradient` aurora blobs (purple, cyan, pink, peach) onto `body` or card backgrounds.
-- **30% Cards & Structural UI:** Elevated surfaces, trays, and subtle `1px` borders.
-- **10% Accent / CTA:** Reserved exclusively for primary actions, active indicators, and focus states. Never assign five different neon accent colors to adjacent cards.
-- **Harmonious OKLCH / Tinted Neutrals:** Lock backgrounds, surfaces, text, and borders to a consistent hue angle (for example `265°` cool slate) with low chroma (`0.01` to `0.04`).
-- **Soft Dark Mode (`22%` to `24%` lightness):** Avoid harsh `#000000` contrast. Use a soft midnight slate (`oklch(23% 0.022 265)` / `#181d27`) with elevated cards (`#1e2636`) and a desaturated accent in dark mode so nothing vibrates against dark surfaces.
+- **Gallery Principle (Achromatic Chrome + White Product Grounds):** On editorial, marketing, and portfolio sites, keep UI chrome strictly achromatic (`#ffffff` pure surfaces, `#f7f7f7` alabaster canvas, `#1a1a1a` primary ink, `#575757` body copy, `#8a8a8a` metadata, `rgba(26, 26, 26, 0.11)` hairline borders) with zero colored UI accents. Stage product screenshots, mockups, and videos on crisp `#ffffff` grounds rather than dark card walls so each product's own palette stands apart. Never layer `radial-gradient` aurora blobs onto `body` or card backgrounds.
+- **Curated Light Rhythm Over Theme Toggles:** For editorial, marketing, and portfolio sites, ship one fully art-directed light experience punctuated by 1 to 2 intentional full-bleed dark contrast bands (`#1a1a1a` next-step footer bands or data callouts) to rest the eye instead of maintaining a dual light/dark toggle that compromises image staging.
+- **60-30-10 Budget & Optional App Dark Mode:** For daily-use applications that require brand accents or dark mode, follow 60% matte neutral canvas, 30% structural surfaces, and 10% single accent, using soft dark-mode lightness (`22%` to `24%`, such as `oklch(23% 0.022 265)` / `#181d27`) rather than `#000000`.
 
-## 2. Fluid Typography, Hierarchy & Measure
+## 2. Fluid Typography, Light Display Hierarchy & Editorial Rhythm
 
-- **Maximum 2 Font Families:** Pair one display/heading typeface with one high-legibility body typeface (plus a monospace face for code/metadata).
-- **Fluid Type Scale (`clamp`, via [Utopia.fyi](https://utopia.fyi)):** Scale smoothly from a `1.2` modular ratio on mobile to desktop without abrupt breakpoint jumps:
-  - Display: `clamp(2.25rem, 4vw + 1.25rem, 4rem)`
-  - H1: `clamp(1.875rem, 3vw + 1rem, 3rem)`
+- **Maximum 2 Font Families:** Pair one display/heading typeface with one high-legibility body typeface (plus a monospace face for code and uppercase metadata labels).
+- **Fluid Type Scale (`clamp`, via [Utopia.fyi](https://utopia.fyi)):** Scale smoothly from mobile to desktop without abrupt breakpoint jumps:
+  - Display: `clamp(2.25rem, 4vw + 1rem, 3.75rem)`
+  - H1: `clamp(1.875rem, 3vw + 1rem, 3.25rem)`
   - H2: `clamp(1.5rem, 1.5vw + 1.1rem, 2.25rem)`
-  - H3: `clamp(1.25rem, 1vw + 0.95rem, 1.65rem)`
-  - Body: `1rem` (`16px`)
-- **Weight, Leading & Tracking:**
-  - Let size carry the hierarchy on large headings (`400` or `500` weight with tight line-height `1.12` to `1.2` and negative letter-spacing `-0.02em` to `-0.03em`) instead of defaulting to `font-bold` on every heading.
-  - Set body copy to `line-height: 1.5` to `1.6` and cap paragraph width at `max-width: 62ch`.
+  - H3: `clamp(1.25rem, 1vw + 0.95rem, 1.5rem)`
+  - Body: `1rem` (`16px` to `17px`)
+- **Weight, Leading & Editorial Contrast:**
+  - Let scale and whitespace carry hierarchy on large headings (`300` light or `400` regular weight, tight line-height `1.06` to `1.15`, negative letter-spacing `-0.02em` to `-0.03em`) instead of defaulting to `font-bold`.
+  - Set body copy to `line-height: 1.55` to `1.7` and cap prose width at `max-width: 62ch`, letting showcase media break wider (`max-width: 64rem` or full bleed) to create gallery rhythm.
 
-## 3. 8pt Spacing Grid, Restrained Radii & Calm Motion
+## 3. 8pt Spacing Grid, Architectural Geometry & Zero-Latency Motion
 
-- **8pt Spacing System:** Use `4px | 8px | 16px | 24px | 32px | 48px | 64px | 96px` with fluid section padding `clamp(4rem, 8vw, 7.5rem)`. Keep spacing tight within related groups and generous between sections.
-- **Tactile Radii (`6px` to `14px`):** Use `6px` for small badges/buttons, `8px` to `12px` for inputs and inner cards, and `12px` to `14px` for showcase containers. Avoid bloated `24px+` bubble cards.
-- **Subtle Depth & Calm Hover:** Use a crisp `1px` low-opacity border and restrained shadow (`0 8px 24px -12px rgba(0, 0, 0, 0.12)`). Keep imagery still on hover (no `hover:scale-105` or card bounce); signal hover with a subtle border transition.
-- **Clear Input Affordance:** Keep free-text inputs visually distinct from suggestion chips with a static, open placeholder.
-- **Clean Headings with `?` Tooltips:** Keep card titles, section headings, and setting labels short and free of explanatory parentheticals (write `Fylkesliga` instead of `Fylkesliga - Skole mot Skole (Anonymisert samspill-liga)`). Move optional clarifications into a small, muted `?` info button with a compact tooltip that works on hover, keyboard focus, and tap (stop event propagation inside collapsible headers).
+- **8pt Spacing System:** Use `4px | 8px | 16px | 24px | 32px | 48px | 64px | 96px` with generous section padding (`clamp(4.5rem, 8vw, 7.5rem)`) and wide card gutters so layouts breathe.
+- **Architectural Radii (`2px` to `6px`) & Flat Surface Contrast:** Default to crisp `2px` to `6px` radii on media stages, cards, and buttons (`0` drop-shadow on cards; separate `#ffffff` surfaces from `#f7f7f7` ground with `1px` low-opacity borders `rgba(26, 26, 26, 0.06)` to `0.11`). Avoid `14px+` shadowed bubble cards.
+- **Flat Visible Top Navigation:** Use a clean, flat sticky top bar (`bg-white/92`, `1px` bottom border) with all 3 to 6 top-level links visible on desktop and underlined when active. Never hide short desktop menus behind a hamburger button, never use floating glassmorphism pills, and omit redundant brand/author names in the navbar when the hero already states them.
+- **Zero Blocking Motion or Scroll Hijacking:** Never hijack native scroll (virtual scroll), block route changes with page-transition overlays, use custom cursors, or gate content behind intro prologues. Keep feedback instantaneous (`150ms` to `200ms` border/color transitions and subtle `1.02` media scale inside overflow-clipped frames, disabled under `prefers-reduced-motion`).
+- **Clear Input Affordance & `?` Tooltips:** Keep free-text inputs visually distinct from suggestion chips with a static placeholder. Keep headings free of explanatory parentheticals, moving optional clarifications into a compact `?` tooltip button that works on hover, focus, and tap.
 
 ## 4. Viewport-Aware Media & Asset Performance
 
